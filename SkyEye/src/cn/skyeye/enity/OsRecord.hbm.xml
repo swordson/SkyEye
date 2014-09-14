@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.skyeye.enity.OsRecord" table="osRecord">
+		<id name="osRid" column="osRid" type="string">
+			<generator class="uuid" />
+		</id>
+
+		<property name="processnum" type="integer"></property>
+		<property name="osname" type="string"></property>
+		<property name="kernel" type="string"></property>
+		<property name="systemUptime" type="string"></property>
+		<property name="hostname" type="string"></property>
+		<property name="ethSpeed" type="string"></property>
+		<property name="sensorlist" type="string"></property>
+		<property name="load" type="string"></property>
+		<property name="diskUserate" type="float"></property>
+		<property name="diskIo" type="float"></property>
+		<property name="cpuUserate" type="float"></property>
+		<property name="memUserate" type="float"></property>
+		<property name="time" type="long"></property>
+	</class>
+	
+</hibernate-mapping>

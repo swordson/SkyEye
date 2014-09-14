@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="cn.skyeye.enity.Sysconfig" table="Sysconfig">
+		<id name="sid" column="sid" type="string">
+			<generator class="uuid" />
+		</id>
+		<property name="isOnOs" column="isOnOs" type="boolean" />
+		<property name="isOnMysql" column="isOnMysql" type="boolean"/>
+		<property name="isOnEmail" column="isOnEmail" type="boolean"/>
+		<property name="isOnAlarm" column="isOnAlarm" type="boolean"/>
+		<property name="smtpUser" column="smtpUser" type="string"/>
+		<property name="smptpPassword" column="smptpPassword" type="string"/>
+		<property name="sender" column="sender" type="string"/>
+		<property name="receiver" column="receiver" type="string"/>
+		
+	</class>
+	
+</hibernate-mapping>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   
+
+	<class name="cn.skyeye.enity.OsInfo" table="OsInfo">
+		<id name="oid" column="oid" type="string">
+			<generator class="uuid" />
+		</id>
+		<property name="snmpUsername"  type="string"/>
+		<property name="snmpPassword"  type="string"/>
+		<property name="ipmiIp"  type="string"/>
+		<property name="ipmiUsername"  type="string"/>
+		<property name="ipmiPassword"  type="string"/>
+	    <property name="sshUSername"  type="string"/>
+		<property name="sshPassword"  type="string"/>
+		<property name="eth0"  type="string"/>
+		<property name="eth1"  type="string"/>
+		<property name="eth2"  type="string"/>
+		<property name="eth3"  type="string"/>
+		<property name="isOn"  type="boolean"/>
+		<property name="freequency"  type="integer"/>
+		<set name="osRecordSet" cascade="all">
+		<key column="osInfo_record"/>
+		<one-to-many class="cn.skyeye.enity.OsRecord"  />
+		</set>
+		<set name="alarmSet" cascade="all">
+		<key column="osInfo_alarm"/>
+		<one-to-many class="cn.skyeye.enity.Alarm"  />
+		</set>
+		
+		
+		
+	</class>
+	
+</hibernate-mapping>

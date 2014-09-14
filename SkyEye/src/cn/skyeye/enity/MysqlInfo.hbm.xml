@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.skyeye.enity.MysqlInfo" table="MysqlInfo">
+		<id name="mid" column="mid" type="string">
+			<generator class="uuid" />
+		</id>
+		<property name="ip"  type="string"/>
+		<property name="musername"  type="string"/>
+		<property name="mpassword"  type="string"/>
+		<property name="port"  type="integer"/>	
+		<set name="mysqlRecordSet" cascade="all">
+		<key column="mInfo_Record"/>
+		<one-to-many class="cn.skyeye.enity.MysqlRecord"/>
+		</set>
+		
+		
+		
+	</class>
+	
+</hibernate-mapping>
